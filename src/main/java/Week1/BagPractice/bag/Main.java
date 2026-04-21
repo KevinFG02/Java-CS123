@@ -1,17 +1,14 @@
-package program;
-
-import bag.Bag;
-import bag.Marble;
+package Week1.BagPractice.bag;
 
 public class Main {
     public static void main(String[] args) {
+        // Incomplete
         //don't forget to include a choice for the generic type!
+        /*
         Bag<String> bag = new Bag<String>(5);
         Bag<String> bagOfStrings = new Bag<String>(10);
-        Bag<Marble> bagOfMarbles = new Bag<Marble>(3);
         Bag<Boolean> bagOfFlags = new Bag<Boolean>(3);
 
-        Marble marb = new Marble("Red", 2);
         String s = new String("Hello");
 
         bag.add("socks");
@@ -19,11 +16,13 @@ public class Main {
         bag.add("hat");
         bag.add("shorts");
         bag.add("shoes");
+         */
 
         /*bag.add(13);
         bag.add(7);
         bag.add(42);*/
 
+        /*
         boolean added = bag.add("belt"); //there should not be room!
         if (!added) {
             System.out.println("Bag is full!");
@@ -37,12 +36,18 @@ public class Main {
         //try removing an element
         bag.remove("shirt");
         bag.remove("shorts");
+         */
 
         /*bag.remove(42);*/
 
+        /*
         System.out.println(bag);
 
         String thing = bag.getSomething();
-        System.out.println(thing);
+        System.out.println(thing);*/
+
+        Pair<Double,Double> pair1 = new Pair<>(43.2,23.4);
+
+        System.out.println(pair1);
     }
 }

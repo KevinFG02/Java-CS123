@@ -1,4 +1,4 @@
-package bag;
+package Week1.BagPractice.bag;
 
 //this defines the behavior of our data structures
 public interface Collection<T> {
