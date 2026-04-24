@@ -80,6 +80,11 @@ public class Program {
         }
     }
 
+    /**
+     * Prints elements depending on the action chosen by the user.
+     *
+     * @param ballType the object used to print elements.
+     */
     public static void ballActions(MagicBall ballType){
         System.out.println("1. Shake once:");
         System.out.println("2. Shake multiple times:");
