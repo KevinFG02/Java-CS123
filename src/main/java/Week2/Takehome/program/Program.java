@@ -2,6 +2,13 @@ package Week2.Takehome.program;
 
 import Week2.Takehome.ball.MagicBall;
 
+/**
+ * Making a magic ball with ArrayLists and generics.
+ *
+ * @author Kevin Flores
+ * @version 1.0
+ */
+
 public class Program {
     public static void main(String[] args){
         String[] colors = {"Blue","Red","Yellow","Green","Purple","Orange","Brown","Pink"};
@@ -31,7 +38,7 @@ public class Program {
             ballChoice = Console.getInt("Type a number to pick a ball.");
         }
 
-        while(ballChoice != 5){
+        while(ballChoice >= 1 && ballChoice <= 5){
             if(ballChoice == 1){
                 stringArrayList = new MagicBall<>(colors);
                 System.out.println("Current Ball: Color ball");
@@ -52,19 +59,26 @@ public class Program {
                 System.out.println("Current Ball: Truth ball");
                 System.out.println("Values stored: " + booleanArrayList.size());
                 ballActions(booleanArrayList);
-            } else {
-                System.out.println("Program ended.");
-                System.exit(1);
             }
 
-            System.out.println("Choose a new magic ball:");
+            if(ballChoice == 5){
+                System.out.println("Program ended.");
+                break;
+            }
+
+            System.out.println("Choose a magic ball:");
             System.out.println("1. Color ball:");
             System.out.println("2. Name ball:");
             System.out.println("3. Number ball:");
             System.out.println("4. Truth ball:");
             System.out.println("5. Exit:");
 
-            ballChoice = Console.getInt("Type a number to pick a ball.");
+            ballChoice = Console.getInt("Type a number to pick a ball?");
+
+            while(ballChoice != 1 && ballChoice != 2 && ballChoice != 3 && ballChoice != 4 && ballChoice != 5){
+                System.out.println("Number out of bounds. Try Again.");
+                ballChoice = Console.getInt("Type a number to pick a ball.");
+            }
         }
     }
 
@@ -101,13 +115,13 @@ public class Program {
             } else if (ballAction == 3){
                 ballType.history();
             } else {
-                System.exit(1);
+                break;
             }
             System.out.println("1. Shake once:");
             System.out.println("2. Shake multiple times:");
             System.out.println("3. Show history:");
             System.out.println("4. Exit:");
-            ballAction = Console.getInt("Type a number to pick an action.");
+            ballAction = Console.getInt("Type a number to pick an action");
         }
     }
 }
