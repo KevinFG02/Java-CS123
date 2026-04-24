@@ -33,7 +33,7 @@ public class Program {
 
         int ballChoice = Console.getInt("Type a number to pick a ball?");
 
-        while(ballChoice != 1 && ballChoice != 2 && ballChoice != 3 && ballChoice != 4 && ballChoice != 5){
+        while(ballChoice < 1 || ballChoice > 5){
             System.out.println("Number out of bounds. Try Again.");
             ballChoice = Console.getInt("Type a number to pick a ball.");
         }
@@ -59,9 +59,7 @@ public class Program {
                 System.out.println("Current Ball: Truth ball");
                 System.out.println("Values stored: " + booleanArrayList.size());
                 ballActions(booleanArrayList);
-            }
-
-            if(ballChoice == 5){
+            } else {
                 System.out.println("Program ended.");
                 break;
             }
@@ -75,7 +73,7 @@ public class Program {
 
             ballChoice = Console.getInt("Type a number to pick a ball?");
 
-            while(ballChoice != 1 && ballChoice != 2 && ballChoice != 3 && ballChoice != 4 && ballChoice != 5){
+            while(ballChoice < 1 || ballChoice > 5){
                 System.out.println("Number out of bounds. Try Again.");
                 ballChoice = Console.getInt("Type a number to pick a ball.");
             }
@@ -89,12 +87,12 @@ public class Program {
         System.out.println("4. Exit:");
         int ballAction = Console.getInt("Type a number to pick an action.");
 
-        while(ballAction != 1 && ballAction != 2 && ballAction != 3 && ballAction != 4){
+        while(ballAction < 1 || ballAction > 4){
             System.out.println("Number out of bounds. Try Again.");
             ballAction = Console.getInt("Type a number to pick an action.");
         }
 
-        while(ballAction == 1 || ballAction == 2 || ballAction == 3 || ballAction == 4){
+        while(ballAction >= 1 && ballAction <= 4){
             String question;
 
             if(ballAction == 1){
@@ -122,6 +120,11 @@ public class Program {
             System.out.println("3. Show history:");
             System.out.println("4. Exit:");
             ballAction = Console.getInt("Type a number to pick an action");
+
+            while(ballAction < 1 || ballAction > 4){
+                System.out.println("Number out of bounds. Try Again.");
+                ballAction = Console.getInt("Type a number to pick an action.");
+            }
         }
     }
 }
