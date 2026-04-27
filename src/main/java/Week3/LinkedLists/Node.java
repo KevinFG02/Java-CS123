@@ -1,4 +1,4 @@
-package Week3.LinkedList;
+package Week3.LinkedLists;
 
 public class Node {
         public Object data;

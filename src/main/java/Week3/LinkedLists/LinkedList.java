@@ -1,12 +1,12 @@
-package Week3.LinkedList;
+package Week3.LinkedLists;
 
-public class linkedList {
+public class LinkedList {
     //access to all nodes through the first node
     private Node head;
     private Node tail;
     private int size;
 
-    public linkedList() {
+    public LinkedList() {
 
     }
 
