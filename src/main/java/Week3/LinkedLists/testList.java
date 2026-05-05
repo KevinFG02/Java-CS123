@@ -1,9 +1,7 @@
 package Week3.LinkedLists;
 
-import java.util.LinkedList;
-
 public class testList {
-    public static void main(String[] args) {
+    static void main() {
         LinkedList colors = new LinkedList();
 
         colors.add("blue");
@@ -21,7 +19,7 @@ public class testList {
         colors.set(0, "cyan");
         colors.set(4, "magenta");
         colors.set(6, "grey");
-        //colors.printList();
+        colors.printList();
 
         //we have to be careful about using a LL optimally
         LinkedList listOfNums = new LinkedList();
