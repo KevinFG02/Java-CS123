@@ -1,4 +1,4 @@
-package Week4.takedown.Exceptions;
+package Week4.TakeHome.Exceptions;
 
 public class GameExceptions extends RuntimeException{
 

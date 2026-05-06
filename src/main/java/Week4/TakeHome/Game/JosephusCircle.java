@@ -1,4 +1,4 @@
-package Week4.takedown.Game;
+package Week4.TakeHome.Game;
 
 /**
  * A class used to make an object for the JosephusGame class.

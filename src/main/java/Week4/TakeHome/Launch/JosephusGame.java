@@ -1,7 +1,7 @@
-package Week4.takedown.Launch;
+package Week4.TakeHome.Launch;
 
-import Week4.takedown.Game.Direction;
-import Week4.takedown.Game.JosephusCircle;
+import Week4.TakeHome.Game.Direction;
+import Week4.TakeHome.Game.JosephusCircle;
 
 import java.util.Scanner;
 
