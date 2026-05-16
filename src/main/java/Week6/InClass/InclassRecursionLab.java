@@ -1,6 +1,4 @@
-package Week6;
-
-import javax.imageio.ImageTranscoder;
+package Week6.InClass;
 
 public class InclassRecursionLab {
     public static void main(String[] args){
