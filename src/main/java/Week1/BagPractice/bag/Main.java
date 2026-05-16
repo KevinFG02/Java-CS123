@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         // Incomplete
         //don't forget to include a choice for the generic type!
-        /*
         Bag<String> bag = new Bag<String>(5);
         Bag<String> bagOfStrings = new Bag<String>(10);
         Bag<Boolean> bagOfFlags = new Bag<Boolean>(3);
@@ -16,8 +15,6 @@ public class Main {
         bag.add("hat");
         bag.add("shorts");
         bag.add("shoes");
-         */
-
         /*bag.add(13);
         bag.add(7);
         bag.add(42);*/
