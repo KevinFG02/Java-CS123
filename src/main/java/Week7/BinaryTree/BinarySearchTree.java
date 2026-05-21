@@ -138,7 +138,7 @@ public class BinarySearchTree {
         if(contains(search)){
             return isLeaf(root, search);
         } else {
-            return false;
+            throw new IllegalArgumentException("Element not found.");
         }
     }
 
@@ -162,7 +162,7 @@ public class BinarySearchTree {
         if(contains(search)){
             return isInternal(root, search);
         } else {
-            return false;
+            throw new IllegalArgumentException("Element not found.");
         }
     }
 

@@ -32,5 +32,8 @@ public class testTree {
         System.out.println(tree.isInternal(50));
         System.out.println(tree.isInternal(200));
         System.out.println(tree.isInternal(80));
+
+        //System.out.println(tree.isLeaf(1));
+        System.out.println(tree.isInternal(1));
     }
 }
