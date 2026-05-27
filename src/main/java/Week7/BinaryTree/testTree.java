@@ -8,6 +8,7 @@ public class testTree {
 
         System.out.println(tree);
 
+        /*
         System.out.println(tree.contains(100));
         System.out.println(tree.contains(364));
         System.out.println(tree.contains(10));
@@ -35,5 +36,8 @@ public class testTree {
 
         //System.out.println(tree.isLeaf(1));
         System.out.println(tree.isInternal(1));
+         */
+        tree.preorder();
+
     }
 }

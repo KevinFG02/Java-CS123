@@ -75,7 +75,7 @@ public class BinarySearchTree {
     }
 
     public boolean isEmpty(){
-        return false;
+        return size == 0;
     }
 
     public int findMin(){
@@ -180,6 +180,42 @@ public class BinarySearchTree {
                 return isInternal(current.right, search);
             }
         }
+    }
+
+    public void preorder(){
+        preorder(root);
+    }
+
+    private void preorder(Node current){
+        if(current == null) return;
+
+        System.out.println(current.data);
+        preorder(current.left);
+        preorder(current.right);
+    }
+
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private void postOrder(Node current){
+        if(current == null) return;
+
+        postOrder(current.left);
+        postOrder(current.right);
+        System.out.println(current.data);
+    }
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    private void inOrder(Node current){
+        if(current == null) return;
+
+        inOrder(current.left);
+        System.out.println(current.data);
+        inOrder(current.right);
     }
 
     public String toString() {
