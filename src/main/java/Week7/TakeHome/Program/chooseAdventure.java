@@ -1,8 +1,7 @@
-package Week7.TakeHome;
+package Week7.TakeHome.Program;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -19,7 +18,7 @@ public class chooseAdventure {
         int counter = 0;
 
         // Read the text file
-        try(Scanner reader = new Scanner(new FileInputStream("src/main/java/Week7/TakeHome/Zombies.txt"))){
+        try(Scanner reader = new Scanner(new FileInputStream("src/main/java/Week7/TakeHome/Files/Zombies.txt"))){
             while(reader.hasNextLine()){
                 String line = reader.nextLine();
                 storyLines[counter] = line;
