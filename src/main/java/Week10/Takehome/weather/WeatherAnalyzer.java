@@ -7,6 +7,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
+ * Analyzing the weather in Seattle while answering 5 questions.
+ *
+ * @author Kevin Flores
+ * @version 1.0
+ *
  * Reads annual Seattle weather data into a TreeMap and answers
  * five analysis questions about the dataset.
  *
@@ -29,7 +34,7 @@ public class WeatherAnalyzer {
         // Load the raw data into parallel arrays
         Integer[] years = new Integer[LAST_YEAR - FIRST_YEAR + 1];
         WeatherRecord[] records = new WeatherRecord[years.length];
-        int count = loadData("seattle_weather.csv", years, records);
+        int count = loadData("src/main/java/Week10/Takehome/seattle-weather.csv", years, records); // Edited the file path
 
         if (count == 0) {
             System.out.println("No data loaded. Check that seattle_weather.csv is present.");
@@ -109,6 +114,17 @@ public class WeatherAnalyzer {
     private static void question1(TreeMap<Integer, WeatherRecord> map) {
         System.out.println("Q1: Average temperature during the 1980s (1980–1989)");
         // TODO: implement
+
+        double averageTemp = 0;
+
+        // Loops over the range of 1980-1989 to get the annual average temperature.
+        for(int i = 0; i < 10; i++){
+            WeatherRecord getAverageTemp = map.get(1980 + i);
+            averageTemp = getAverageTemp.getAvgTempF() + averageTemp;
+        }
+
+        double result = averageTemp / 10;
+        System.out.println("Average Temperature from 1980-1989 is " + result);
         System.out.println();
     }
 
@@ -122,6 +138,20 @@ public class WeatherAnalyzer {
     private static void question2(TreeMap<Integer, WeatherRecord> map) {
         System.out.println("Q2: Years with more than 160 rain days (1990–2010)");
         // TODO: implement
+        int counter = 0;
+
+        // Loops over the range of 1990-2010 to get the annual rain day count.
+        for(int i = 0; i < 21; i++){
+            WeatherRecord getRainDay = map.get(1990 + i);
+            int compareDays = getRainDay.getDaysWithRain();
+
+            // Evaluates if the rain day count surpasses 160 days.
+            if(compareDays > 160){
+                System.out.println("Year: " + (1990 + i) + ", Days of rain: " + getRainDay.getDaysWithRain());
+                counter++;
+            }
+        }
+        System.out.println(counter + " is the amount of years that have more 160 days of rain from 1990 to 2010.");
         System.out.println();
     }
 
@@ -134,6 +164,23 @@ public class WeatherAnalyzer {
     private static void question3(TreeMap<Integer, WeatherRecord> map) {
         System.out.println("Q3: Hottest single day on record");
         // TODO: implement
+        int recordTemp = 0;
+        int saveYear = 0;
+
+        // Loops over the entire dataset to find the hottest temperature recorded.
+        for(int i = 0; i < map.size() - 1; i++){
+            WeatherRecord getHighTemp = map.get(1946 + i);
+            int compareTempDay = getHighTemp.getMaxTempF();
+
+            /*Updates the recordTime variable if the current object has a higher temperature than
+              the previous record. It also saves the current year if the previous condition is met.*/
+            if(compareTempDay > recordTemp){
+                recordTemp = compareTempDay;
+                saveYear = 1946 + i;
+            }
+        }
+
+        System.out.println("Highest Temperature ever recorded: " + recordTemp + ", Year: " + saveYear);
         System.out.println();
     }
 
@@ -146,6 +193,21 @@ public class WeatherAnalyzer {
     private static void question4(TreeMap<Integer, WeatherRecord> map) {
         System.out.println("Q4: Years in the 1950s–1960s where max temp never reached 90°F");
         // TODO: implement
+        int counter = 0;
+
+        // Loops from 1950 to 1969 to evaluate the maximum temperature.
+        for(int i = 0; i < 20; i++){
+            WeatherRecord getHighTemp = map.get(1950 + i);
+            int compareTempDay = getHighTemp.getMaxTempF();
+
+            // Decides if the maximum temperature surpasses 90F and adds to a counter.
+            if(compareTempDay < 90){
+                counter++;
+                System.out.println("Year: " + (1950 + i) + ", Temperature:" + compareTempDay);
+            }
+        }
+
+        System.out.println(counter + " years had never reached 90F from 1950-1969.");
         System.out.println();
     }
 
@@ -159,6 +221,40 @@ public class WeatherAnalyzer {
     private static void question5(TreeMap<Integer, WeatherRecord> map) {
         System.out.println("Q5: Total precipitation by decade");
         // TODO: implement
+        int decadeCounter = 1940;
+        int getYear;
+        int intLimit;
+
+        // Loops through each decade and updates the decade counter.
+        for(int i = 0; i < 9; i++){
+            double totalPrecip = 0;
+
+            /* Changes the inner loop's stopping point and WeatherRecord object depending on the
+               decade counter */
+            if(decadeCounter < 1950){
+                intLimit = 4;
+                getYear = 1946;
+            } else if (decadeCounter > 2010) {
+                intLimit = 4;
+                getYear = 2020;
+            } else {
+                intLimit = 10;
+                getYear = decadeCounter;
+            }
+
+            /* An inner loop that accumulates the precipitation total for each year
+            and adds it to a variable that represents the decade.*/
+            for(int j = 0; j < intLimit; j++){
+                WeatherRecord getPrecip = map.get(getYear + j);
+                double annualPrecip = getPrecip.getPrecipIn();
+
+                totalPrecip = annualPrecip + totalPrecip;
+            }
+
+            System.out.println(decadeCounter + "s: " + totalPrecip);
+            decadeCounter = decadeCounter + 10;
+        }
+
         System.out.println();
     }
 }

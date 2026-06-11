@@ -1,5 +1,7 @@
 package Week10.Takehome.maps;
 
+import Week10.Takehome.weather.WeatherRecord;
+
 /**
  * A generic binary search tree that maps keys to values.
  *
@@ -43,7 +45,36 @@ public class TreeMap<K extends Comparable<K>, V> implements OrderedMap<K, V> {
     @Override
     public boolean add(K key, V value) {
         // TODO: implement
-        return false;
+        if(root == null){
+            root = new Node(key,value);
+            size ++;
+            return true;
+        }
+
+        return add(key, value, root);
+    }
+
+    public boolean add(K key, V value, Node current){
+        if(key.compareTo(current.key) == 0){
+            return false;
+        }
+        else if(key.compareTo(current.key) > 0){
+            if(current.right == null){
+                current.right = new Node(key, value);
+                size++;
+                return true;
+            }
+
+            return add(key, value, current.right);
+
+        } else {
+            if(current.left == null){
+                current.left = new Node(key, value);
+                size++;
+                return true;
+            }
+            return add(key, value, current.left);
+        }
     }
 
     /**
@@ -58,7 +89,23 @@ public class TreeMap<K extends Comparable<K>, V> implements OrderedMap<K, V> {
     @Override
     public V get(K key) {
         // TODO: implement
-        return null;
+        if(root == null){
+            return null;
+        }
+
+        return get(key, root);
+    }
+
+    public V get(K key, Node current){
+        if (key.compareTo(current.key) == 0){
+            return current.value;
+        } else if (key.compareTo(current.key) > 0){
+            return get(key, current.right);
+        } else if (key.compareTo(current.key) < 0){
+            return get(key, current.left);
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -72,6 +119,22 @@ public class TreeMap<K extends Comparable<K>, V> implements OrderedMap<K, V> {
     @Override
     public boolean containsKey(K key) {
         // TODO: implement
+        if(root == null){
+            return false;
+        }
+
+        return containsKey(key, root);
+    }
+
+    public boolean containsKey(K key, Node current){
+        if (key.compareTo(current.key) == 0){
+            return true;
+        } else if (key.compareTo(current.key) > 0){
+            return containsKey(key, current.right);
+        } else if (key.compareTo(current.key) < 0){
+            return containsKey(key, current.left);
+        }
+
         return false;
     }
 
@@ -88,7 +151,23 @@ public class TreeMap<K extends Comparable<K>, V> implements OrderedMap<K, V> {
     @Override
     public boolean containsValue(V value) {
         // TODO: implement
-        return false;
+        if(root == null){
+            return false;
+        }
+
+        return containsValue(value, root);
+    }
+
+    public boolean containsValue(V value, Node current){
+        if(current == null){
+            return false;
+        }
+
+        if(current.value.equals(value)){
+            return true;
+        }
+
+        return containsValue(value, current.left) || containsValue(value, current.right);
     }
 
     // -----------------------------------------------------------------------
