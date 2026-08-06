@@ -1,7 +1,13 @@
-package Week9.Iterators;
+package week9.iterators;
 
 import java.util.Iterator;
 
+/**
+ * The main program to test the Range object.
+ *
+ * @author Kevin Flores-Gonzalez
+ * @version 1.0
+ */
 public class RangeTest {
     public static void main(String[] args) {
         Range range = new Range(5, 15);
