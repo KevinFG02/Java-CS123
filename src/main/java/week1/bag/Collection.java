@@ -1,6 +1,6 @@
-package Week1.BagPractice.bag;
+package week1.bag;
 
-//this defines the behavior of our data structures
+// Defines the behavior of our data structures
 public interface Collection<T> {
     boolean add(T obj);
     boolean remove(T search);

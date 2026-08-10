@@ -1,50 +1,48 @@
-package Week1.BagPractice.bag;
+package week1.bag;
 
-public class Main {
+/**
+ * Testing a bag data structure from class.
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
+public class MainBag {
     public static void main(String[] args) {
-        // Incomplete
-        //don't forget to include a choice for the generic type!
         Bag<String> bag = new Bag<String>(5);
-        Bag<String> bagOfStrings = new Bag<String>(10);
-        Bag<Boolean> bagOfFlags = new Bag<Boolean>(3);
-
-        String s = new String("Hello");
+        // Bag<Boolean> bagOfFlags = new Bag<Boolean>(3);
 
         bag.add("socks");
         bag.add("shirt");
         bag.add("hat");
         bag.add("shorts");
         bag.add("shoes");
-        /*bag.add(13);
-        bag.add(7);
-        bag.add(42);*/
 
-        /*
-        boolean added = bag.add("belt"); //there should not be room!
+        boolean added = bag.add("belt"); // There should not be room.
         if (!added) {
             System.out.println("Bag is full!");
         }
 
         System.out.println("Capacity: " + bag.capacity());
         System.out.println("Size: " + bag.size());
-
         System.out.println(bag);
 
         //try removing an element
         bag.remove("shirt");
         bag.remove("shorts");
-         */
-
-        /*bag.remove(42);*/
-
-        /*
         System.out.println(bag);
 
         String thing = bag.getSomething();
-        System.out.println(thing);*/
+        System.out.println(thing);
 
-        Pair<Double,Double> pair1 = new Pair<>(43.2,23.4);
+        System.out.println(bag.size());
 
-        System.out.println(pair1);
+        /*
+        // Testing different data types.
+        bag.add(13);
+        bag.add(7);
+        bag.add(42);
+
+        bag.remove(42);
+        */
     }
 }
