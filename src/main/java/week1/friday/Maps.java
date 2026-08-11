@@ -1,12 +1,15 @@
-package Week1.Friday;
+package week1.friday;
 
 import java.util.HashMap;
 import java.util.Map;
 
-// Kevin Flores
-// 4/10/26
-// CS123
-
+/**
+ * Testing the Map data structure
+ *
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class Maps {
     public static void main(String[] args){
         Map<String, Integer> map1 = new HashMap<>(); //TreeMap

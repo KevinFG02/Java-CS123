@@ -1,13 +1,16 @@
-package Week1.Friday;
+package week1.friday;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-// Kevin Flores
-// 4/10/26
-// CS123
-
+/**
+ * Testing the Stack & Queue data structures
+ *
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class StacksAndQueues {
     public static void main(String[] args){
         stackExamples();

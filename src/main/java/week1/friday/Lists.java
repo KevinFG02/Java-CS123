@@ -1,12 +1,15 @@
-package Week1.Friday;
+package week1.friday;
 
 import java.util.List;
 import java.util.LinkedList;
 
-// Kevin Flores
-// 4/10/26
-// CS123
-
+/**
+ * Testing the List data structure
+ *
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class Lists {
     public static void main(String[] args){
         List<String> list1 = new LinkedList<>();

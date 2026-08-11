@@ -1,12 +1,15 @@
-package Week1.Friday;
+package week1.friday;
 
 import java.util.HashSet;
 import java.util.Set;
 
-// Kevin Flores
-// 4/10/26
-// CS123
-
+/**
+ * Testing the Set data structure
+ *
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class Sets {
     public static void main(String[] args){
         Set<Integer> set1 = new HashSet<>(); //TreeSet
