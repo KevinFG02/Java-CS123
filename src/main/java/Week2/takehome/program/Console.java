@@ -1,4 +1,4 @@
-package Week2.Takehome.program;
+package Week2.takehome.program;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Week2.Takehome.ball;
+package Week2.takehome.ball;
 
 import java.util.ArrayList;
 

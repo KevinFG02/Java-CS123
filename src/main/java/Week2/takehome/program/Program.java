@@ -1,6 +1,6 @@
-package Week2.Takehome.program;
+package Week2.takehome.program;
 
-import Week2.Takehome.ball.MagicBall;
+import Week2.takehome.ball.MagicBall;
 
 /**
  * Making a magic ball with ArrayLists and generics.
