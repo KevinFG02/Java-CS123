@@ -15,8 +15,8 @@ public class Pair<D1,D2>{
     /**
      * Constructor for the Pair object.
      *
-     * @param first
-     * @param second
+     * @param first The first object
+     * @param second The second object
      */
     public Pair(D1 first, D2 second){
         this.first = first;
