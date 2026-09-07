@@ -1,17 +1,34 @@
-package Week2.Friday.List;
+package week2.friday.list;
 
 import java.util.*;
 
+/**
+ * Testing an Array using Generics.
+ *
+ * @author Kevin Flores-Gonzalez
+ * @param <T> Generics for the ArrayList Object
+ * @version 1.0
+ */
 public class ArrayList<T> implements Collection<T>, List<T> {
     private static final int INITIAL_CAPACITY = 5;
 
     private T[] data;
     private int size; //AKA nextIndex...
 
+    /**
+     * Constructor for Arraylist object
+     */
     public ArrayList() {
         data = (T[])new Object[INITIAL_CAPACITY];
     }
 
+    /**
+     * A method that adds new elements into the ArrayList
+     *
+     * @param newElem An element soon to be added.
+     * @return Returns a boolean if a new element was added successful.
+     */
+    @Override
     public boolean add(T newElem) {
         //detect if the array is full
         if (data.length == size) {
@@ -23,6 +40,9 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return true;
     }
 
+    /**
+     * A method that resizes the ArrayList once the ArrayList is completely filled
+     */
     private void resize() {
         //create a new array, replace the old array
         T[] oldData = data;
@@ -35,12 +55,12 @@ public class ArrayList<T> implements Collection<T>, List<T> {
     }
 
     /**
-     * Inserts an element at a position in the internal array,
-     * and shifts elements out of the way to make room for it.
+     * Inserts an element at a position in the internal array, and shifts elements out of the way to make room for it
      *
      * @param index index at which the specified element is to be inserted
      * @param element element to be inserted
      */
+    @Override
     public void add(int index, T element) {
         validateIndex(index);
 
@@ -57,18 +77,25 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         size++;
     }
 
+    /**
+     * A method that returns an element based on the selected index
+     *
+     * @param index index of the element to return
+     * @return returns an element.
+     */
+    @Override
     public T get(int index) {
         validateIndex(index);
         return data[index];
     }
 
-    private void validateIndex(int index) {
-        if (index >= size || index < 0) {
-            throw new IndexOutOfBoundsException("Invalid index");
-        }
-    }
-
-    //returns the old value after replacing it
+    /**
+     * Sets an element at the selected index
+     *
+     * @param index index of the element to replace
+     * @param element element to be stored at the specified position
+     * @return returns ane element.
+     */
     public T set(int index, T element) {
         validateIndex(index);
 
@@ -77,14 +104,44 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return oldValue;
     }
 
+    /**
+     * Determines if an index exists within the ArrayList
+     *
+     * @param index index of the element to return
+     */
+    private void validateIndex(int index) {
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        }
+    }
+
+    /**
+     * A method that returns the size of the ArrayList
+     *
+     * @return returns an int
+     */
+    @Override
     public int size() {
         return size;
     }
 
+    /**
+     * A method that determines if the ArrayList is empty
+     *
+     * @return returns a boolean
+     */
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    /**
+     * A method that determines if an element is in the ArrayList
+     *
+     * @param other element whose presence in this collection is to be tested
+     * @return returns a boolean
+     */
+    @Override
     public boolean contains(Object other) {
         //loop over the "filled" part of the list
         for (int i = 0; i < size; i++) {
@@ -95,6 +152,10 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return false;
     }
 
+    /**
+     * A method that clears all elements in the ArrayList
+     */
+    @Override
     public void clear() {
         //clear out the array
         for (int i = 0; i < size; i++) {
@@ -105,6 +166,13 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         size = 0;
     }
 
+    /**
+     * A method that removes elements in an ArrayList.
+     *
+     * @param search element to be removed from this collection, if present
+     * @return returns a boolean
+     */
+    @Override
     public boolean remove(Object search) {
         int index = findObjectIndex(search);
         if (index == -1) return false;
@@ -113,15 +181,7 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return true;
     }
 
-    private int findObjectIndex(Object search) {
-        for (int i = 0; i < size; i++) {
-            if (data[i].equals(search)) {
-                return i; //found!
-            }
-        }
-        return -1; //not found!
-    }
-
+    @Override
     public T remove(int index) {
         validateIndex(index);
 
@@ -138,6 +198,26 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return result;
     }
 
+    /**
+     * A method that find a specific element in the ArrayList
+     *
+     * @param search An element in the ArrayList
+     * @return returns an int
+     */
+    private int findObjectIndex(Object search) {
+        for (int i = 0; i < size; i++) {
+            if (data[i].equals(search)) {
+                return i; //found!
+            }
+        }
+        return -1; //not found!
+    }
+
+    /**
+     * A method that gets the first object in the ArrayList.
+     *
+     * @return returns an object
+     */
     @Override
     public T getFirst() {
         if (size == 0) {
@@ -147,6 +227,11 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return data[0];
     }
 
+    /**
+     * A method that gets the last object in the ArrayList.
+     *
+     * @return returns an object
+     */
     @Override
     public T getLast() {
         if (size == 0) {
@@ -156,16 +241,32 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return data[size-1];
     }
 
+    /**
+     * Adds an element at the beginning of the ArrayList.
+     *
+     * @param element the element to be added
+     */
     @Override
     public void addFirst(T element) {
         add(0, element);
     }
 
+    /**
+     * Adds an element at the ending of the ArrayList.
+     *
+     * @param element the element to be added
+     */
     @Override
     public void addLast(T element) {
         add(element);
     }
 
+
+    /**
+     * Removes the first object in the ArrayList.
+     *
+     * @return returns the object being removed.
+     */
     @Override
     public T removeFirst() {
         if (size == 0) {
@@ -175,6 +276,11 @@ public class ArrayList<T> implements Collection<T>, List<T> {
         return remove(0);
     }
 
+    /**
+     * Removes the last object in the ArrayList.
+     *
+     * @return returns the object being removed.
+     */
     @Override
     public T removeLast() {
         if (size == 0) {
