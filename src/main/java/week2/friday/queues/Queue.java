@@ -1,10 +1,20 @@
-package Week2.Friday.Queues;
+package week2.friday.queues;
 
-import Week2.Friday.List.ArrayList;
+import week2.friday.list.ArrayList;
 
+/**
+ * Making a Queue data structure.
+ *
+ * @author Kevin Flores-Gonzalez
+ * @param <T> Generic used for the queue
+ * @version 1.0
+ */
 public class Queue<T> implements iQueue<T> {
     private ArrayList<T> queueEx;
 
+    /**
+     * The constructor for the queue.
+     */
     public Queue(){
         queueEx = new ArrayList<>();
     }

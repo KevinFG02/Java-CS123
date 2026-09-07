@@ -1,5 +1,11 @@
-package Week2.ArrayListPractice;
+package week2.arrayListPractice;
 
+/**
+ * Practicing with ArrayLists
+ *
+ * @author Kevin Flores-Gonzalez
+ * @version 1.0
+ */
 public class ArrayListMain {
     public static void main(String[] args) {
         ArrayList<String> topMovies = new ArrayList<>();

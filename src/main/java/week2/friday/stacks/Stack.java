@@ -1,10 +1,20 @@
-package Week2.Friday.Stacks;
+package week2.friday.stacks;
 
-import Week2.Friday.List.ArrayList;
+import week2.friday.list.ArrayList;
 
+/**
+ * Making a Stack data structure.
+ *
+ * @author Kevin Flores-Gonzalez
+ * @param <T> The generic used for the Stack data structure.
+ * @version 1.0
+ */
 public class Stack<T> implements IStack<T> {
     private ArrayList<T> list;
 
+    /**
+     * A constuctor for the Stack data structure.
+     */
     public Stack(){
         list = new ArrayList<>();
     }

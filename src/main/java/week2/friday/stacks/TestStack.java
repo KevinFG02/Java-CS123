@@ -1,5 +1,11 @@
-package Week2.Friday.Stacks;
+package week2.friday.stacks;
 
+/**
+ * Testing Stack data structures.
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class TestStack {
     public static void main(String[] args){
         Stack<Integer> stack1 = new Stack<>();

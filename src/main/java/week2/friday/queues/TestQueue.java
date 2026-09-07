@@ -1,7 +1,11 @@
-package Week2.Friday.Queues;
+package week2.friday.queues;
 
-import Week2.Friday.Stacks.Stack;
-
+/**
+ * Testing Queue data structures.
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class TestQueue {
     public static void main(String[] args){
         Queue<Integer> queue1 = new Queue<>();

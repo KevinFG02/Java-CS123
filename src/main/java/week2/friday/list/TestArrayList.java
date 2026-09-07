@@ -1,5 +1,11 @@
-package Week2.Friday.List;
+package week2.friday.list;
 
+/**
+ * Making and testing an ArrayList
+ * @author Kevin Flores-Gonzalez
+ *
+ * @version 1.0
+ */
 public class TestArrayList {
     public static void main(String[] args){
         ArrayList<Integer> testArray = new ArrayList<>();

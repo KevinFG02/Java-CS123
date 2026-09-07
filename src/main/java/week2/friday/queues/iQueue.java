@@ -1,4 +1,4 @@
-package Week2.Friday.Queues;
+package week2.friday.queues;
 
 public interface iQueue<T> {
     void enQueue(T element);
